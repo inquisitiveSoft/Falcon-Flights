@@ -1,0 +1,630 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A06CCED281AE8E10089D5B4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A06CCEC281AE8E10089D5B4 /* RootView.swift */; };
+		4A06CCEF281AE8E40089D5B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A06CCEE281AE8E40089D5B4 /* Assets.xcassets */; };
+		4A06CCF2281AE8E40089D5B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A06CCF1281AE8E40089D5B4 /* Preview Assets.xcassets */; };
+		4A06CCFC281AE8E40089D5B4 /* Falcon_FlightsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A06CCFB281AE8E40089D5B4 /* Falcon_FlightsTests.swift */; };
+		4A06CD06281AE8E40089D5B4 /* Falcon_FlightsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A06CD05281AE8E40089D5B4 /* Falcon_FlightsUITests.swift */; };
+		4A06CD08281AE8E40089D5B4 /* Falcon_FlightsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A06CD07281AE8E40089D5B4 /* Falcon_FlightsUITestsLaunchTests.swift */; };
+		4A06CD15281AEA730089D5B4 /* FlightManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A06CD14281AEA730089D5B4 /* FlightManager.swift */; };
+		4A06CD17281AEB280089D5B4 /* FalconListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A06CD16281AEB280089D5B4 /* FalconListView.swift */; };
+		4A06CD1C281AEF390089D5B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A06CD1B281AEF390089D5B4 /* AppDelegate.swift */; };
+		4A06CD1E281AEFE60089D5B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A06CD1D281AEFE60089D5B4 /* SceneDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4A06CCF8281AE8E40089D5B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A06CCDF281AE8E10089D5B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A06CCE6281AE8E10089D5B4;
+			remoteInfo = "Falcon Flights";
+		};
+		4A06CD02281AE8E40089D5B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A06CCDF281AE8E10089D5B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A06CCE6281AE8E10089D5B4;
+			remoteInfo = "Falcon Flights";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4A06CCE7281AE8E10089D5B4 /* Falcon Flights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Falcon Flights.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A06CCEC281AE8E10089D5B4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		4A06CCEE281AE8E40089D5B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4A06CCF1281AE8E40089D5B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4A06CCF7281AE8E40089D5B4 /* Falcon FlightsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Falcon FlightsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A06CCFB281AE8E40089D5B4 /* Falcon_FlightsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Falcon_FlightsTests.swift; sourceTree = "<group>"; };
+		4A06CD01281AE8E40089D5B4 /* Falcon FlightsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Falcon FlightsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A06CD05281AE8E40089D5B4 /* Falcon_FlightsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Falcon_FlightsUITests.swift; sourceTree = "<group>"; };
+		4A06CD07281AE8E40089D5B4 /* Falcon_FlightsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Falcon_FlightsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4A06CD14281AEA730089D5B4 /* FlightManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightManager.swift; sourceTree = "<group>"; };
+		4A06CD16281AEB280089D5B4 /* FalconListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FalconListView.swift; sourceTree = "<group>"; };
+		4A06CD1B281AEF390089D5B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4A06CD1D281AEFE60089D5B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4A06CD1F281B010E0089D5B4 /* Falcon-Flights-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Falcon-Flights-Info.plist"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4A06CCE4281AE8E10089D5B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A06CCF4281AE8E40089D5B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A06CCFE281AE8E40089D5B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4A06CCDE281AE8E10089D5B4 = {
+			isa = PBXGroup;
+			children = (
+				4A06CCE9281AE8E10089D5B4 /* Falcon Flights */,
+				4A06CCFA281AE8E40089D5B4 /* Falcon FlightsTests */,
+				4A06CD04281AE8E40089D5B4 /* Falcon FlightsUITests */,
+				4A06CCE8281AE8E10089D5B4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4A06CCE8281AE8E10089D5B4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A06CCE7281AE8E10089D5B4 /* Falcon Flights.app */,
+				4A06CCF7281AE8E40089D5B4 /* Falcon FlightsTests.xctest */,
+				4A06CD01281AE8E40089D5B4 /* Falcon FlightsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A06CCE9281AE8E10089D5B4 /* Falcon Flights */ = {
+			isa = PBXGroup;
+			children = (
+				4A06CD1F281B010E0089D5B4 /* Falcon-Flights-Info.plist */,
+				4A06CD1B281AEF390089D5B4 /* AppDelegate.swift */,
+				4A06CD1D281AEFE60089D5B4 /* SceneDelegate.swift */,
+				4A06CD19281AEBAB0089D5B4 /* Managers */,
+				4A06CD18281AEBA40089D5B4 /* Data Model */,
+				4A06CD1A281AEBD90089D5B4 /* UI */,
+				4A06CCF0281AE8E40089D5B4 /* Preview Content */,
+				4A06CCEE281AE8E40089D5B4 /* Assets.xcassets */,
+			);
+			path = "Falcon Flights";
+			sourceTree = "<group>";
+		};
+		4A06CCF0281AE8E40089D5B4 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4A06CCF1281AE8E40089D5B4 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4A06CCFA281AE8E40089D5B4 /* Falcon FlightsTests */ = {
+			isa = PBXGroup;
+			children = (
+				4A06CCFB281AE8E40089D5B4 /* Falcon_FlightsTests.swift */,
+			);
+			path = "Falcon FlightsTests";
+			sourceTree = "<group>";
+		};
+		4A06CD04281AE8E40089D5B4 /* Falcon FlightsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4A06CD05281AE8E40089D5B4 /* Falcon_FlightsUITests.swift */,
+				4A06CD07281AE8E40089D5B4 /* Falcon_FlightsUITestsLaunchTests.swift */,
+			);
+			path = "Falcon FlightsUITests";
+			sourceTree = "<group>";
+		};
+		4A06CD18281AEBA40089D5B4 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		4A06CD19281AEBAB0089D5B4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				4A06CD14281AEA730089D5B4 /* FlightManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		4A06CD1A281AEBD90089D5B4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4A06CCEC281AE8E10089D5B4 /* RootView.swift */,
+				4A06CD16281AEB280089D5B4 /* FalconListView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4A06CCE6281AE8E10089D5B4 /* Falcon Flights */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A06CD0B281AE8E40089D5B4 /* Build configuration list for PBXNativeTarget "Falcon Flights" */;
+			buildPhases = (
+				4A06CCE3281AE8E10089D5B4 /* Sources */,
+				4A06CCE4281AE8E10089D5B4 /* Frameworks */,
+				4A06CCE5281AE8E10089D5B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Falcon Flights";
+			productName = "Falcon Flights";
+			productReference = 4A06CCE7281AE8E10089D5B4 /* Falcon Flights.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4A06CCF6281AE8E40089D5B4 /* Falcon FlightsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A06CD0E281AE8E40089D5B4 /* Build configuration list for PBXNativeTarget "Falcon FlightsTests" */;
+			buildPhases = (
+				4A06CCF3281AE8E40089D5B4 /* Sources */,
+				4A06CCF4281AE8E40089D5B4 /* Frameworks */,
+				4A06CCF5281AE8E40089D5B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A06CCF9281AE8E40089D5B4 /* PBXTargetDependency */,
+			);
+			name = "Falcon FlightsTests";
+			productName = "Falcon FlightsTests";
+			productReference = 4A06CCF7281AE8E40089D5B4 /* Falcon FlightsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4A06CD00281AE8E40089D5B4 /* Falcon FlightsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A06CD11281AE8E40089D5B4 /* Build configuration list for PBXNativeTarget "Falcon FlightsUITests" */;
+			buildPhases = (
+				4A06CCFD281AE8E40089D5B4 /* Sources */,
+				4A06CCFE281AE8E40089D5B4 /* Frameworks */,
+				4A06CCFF281AE8E40089D5B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A06CD03281AE8E40089D5B4 /* PBXTargetDependency */,
+			);
+			name = "Falcon FlightsUITests";
+			productName = "Falcon FlightsUITests";
+			productReference = 4A06CD01281AE8E40089D5B4 /* Falcon FlightsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4A06CCDF281AE8E10089D5B4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					4A06CCE6281AE8E10089D5B4 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					4A06CCF6281AE8E40089D5B4 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 4A06CCE6281AE8E10089D5B4;
+					};
+					4A06CD00281AE8E40089D5B4 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 4A06CCE6281AE8E10089D5B4;
+					};
+				};
+			};
+			buildConfigurationList = 4A06CCE2281AE8E10089D5B4 /* Build configuration list for PBXProject "Falcon Flights" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4A06CCDE281AE8E10089D5B4;
+			productRefGroup = 4A06CCE8281AE8E10089D5B4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4A06CCE6281AE8E10089D5B4 /* Falcon Flights */,
+				4A06CCF6281AE8E40089D5B4 /* Falcon FlightsTests */,
+				4A06CD00281AE8E40089D5B4 /* Falcon FlightsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4A06CCE5281AE8E10089D5B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A06CCF2281AE8E40089D5B4 /* Preview Assets.xcassets in Resources */,
+				4A06CCEF281AE8E40089D5B4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A06CCF5281AE8E40089D5B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A06CCFF281AE8E40089D5B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A06CCE3281AE8E10089D5B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A06CD17281AEB280089D5B4 /* FalconListView.swift in Sources */,
+				4A06CCED281AE8E10089D5B4 /* RootView.swift in Sources */,
+				4A06CD1C281AEF390089D5B4 /* AppDelegate.swift in Sources */,
+				4A06CD15281AEA730089D5B4 /* FlightManager.swift in Sources */,
+				4A06CD1E281AEFE60089D5B4 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A06CCF3281AE8E40089D5B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A06CCFC281AE8E40089D5B4 /* Falcon_FlightsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A06CCFD281AE8E40089D5B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A06CD06281AE8E40089D5B4 /* Falcon_FlightsUITests.swift in Sources */,
+				4A06CD08281AE8E40089D5B4 /* Falcon_FlightsUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4A06CCF9281AE8E40089D5B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A06CCE6281AE8E10089D5B4 /* Falcon Flights */;
+			targetProxy = 4A06CCF8281AE8E40089D5B4 /* PBXContainerItemProxy */;
+		};
+		4A06CD03281AE8E40089D5B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A06CCE6281AE8E10089D5B4 /* Falcon Flights */;
+			targetProxy = 4A06CD02281AE8E40089D5B4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4A06CD09281AE8E40089D5B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4A06CD0A281AE8E40089D5B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4A06CD0C281AE8E40089D5B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Falcon Flights/Preview Content\"";
+				DEVELOPMENT_TEAM = D92MT22EX5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Falcon-Flights-Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "inquisitiveSoftware.Falcon-Flights";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4A06CD0D281AE8E40089D5B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Falcon Flights/Preview Content\"";
+				DEVELOPMENT_TEAM = D92MT22EX5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Falcon-Flights-Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "inquisitiveSoftware.Falcon-Flights";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4A06CD0F281AE8E40089D5B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D92MT22EX5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "inquisitiveSoftware.Falcon-FlightsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Falcon Flights.app/Falcon Flights";
+			};
+			name = Debug;
+		};
+		4A06CD10281AE8E40089D5B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D92MT22EX5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "inquisitiveSoftware.Falcon-FlightsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Falcon Flights.app/Falcon Flights";
+			};
+			name = Release;
+		};
+		4A06CD12281AE8E40089D5B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D92MT22EX5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "inquisitiveSoftware.Falcon-FlightsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Falcon Flights";
+			};
+			name = Debug;
+		};
+		4A06CD13281AE8E40089D5B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D92MT22EX5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "inquisitiveSoftware.Falcon-FlightsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Falcon Flights";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4A06CCE2281AE8E10089D5B4 /* Build configuration list for PBXProject "Falcon Flights" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A06CD09281AE8E40089D5B4 /* Debug */,
+				4A06CD0A281AE8E40089D5B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A06CD0B281AE8E40089D5B4 /* Build configuration list for PBXNativeTarget "Falcon Flights" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A06CD0C281AE8E40089D5B4 /* Debug */,
+				4A06CD0D281AE8E40089D5B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A06CD0E281AE8E40089D5B4 /* Build configuration list for PBXNativeTarget "Falcon FlightsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A06CD0F281AE8E40089D5B4 /* Debug */,
+				4A06CD10281AE8E40089D5B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A06CD11281AE8E40089D5B4 /* Build configuration list for PBXNativeTarget "Falcon FlightsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A06CD12281AE8E40089D5B4 /* Debug */,
+				4A06CD13281AE8E40089D5B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4A06CCDF281AE8E10089D5B4 /* Project object */;
+}
