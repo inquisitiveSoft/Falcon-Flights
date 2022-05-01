@@ -8,15 +8,24 @@
 import SwiftUI
 
 struct RootView: View {
-    @ObservedObject var flightManager: FlightManager = FlightManager()
+    @ObservedObject var flightManager: FlightManager
+    @ObservedObject var dataSource: LaunchesDataSource
+    
+    init(flightManager: FlightManager = FlightManager()) {
+        self.flightManager = flightManager
+        
+        dataSource = LaunchesDataSource(initialQuery: .rocket(.falcon9, pageNumber: nil),
+                                        sortOptions: ["flight_number": .ascending],
+                                        networkManager: flightManager.networkManager)
+    }
     
     var body: some View {
         Group {
-//            HeaderView()
-            FalconListView()
+            FalconListView(dataSource: dataSource)
         }
         .environmentObject(flightManager)
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

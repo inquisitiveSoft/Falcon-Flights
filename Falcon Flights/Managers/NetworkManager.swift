@@ -16,88 +16,6 @@ protocol URLSessionProtocol {
 
 extension URLSession: URLSessionProtocol {}
 
-// MARK: Data Types
-enum RocketType: String {
-    case falcon9 = "5e9d0d95eda69973a809d1ec"
-    
-    var name: String {
-        switch self {
-        case .falcon9:
-            return "Falcon 9"
-        }
-    }
-    
-    var uuidString: String {
-        return rawValue
-    }
-}
-
-enum Query {
-    case rocket(RocketType, pageNumber: Int?)
-    
-    func url(withAPIRoot apiRoot: URL) -> URL {
-        switch self {
-        case .rocket(_, _):
-            return apiRoot.appendingPathComponent("launches/query")
-        }
-    }
-    
-    var httpMethod: String {
-        switch self {
-        case .rocket:
-            return "POST"
-        }
-    }
-        
-}
-
-struct RocketItem: Decodable, Identifiable {
-    private enum CodingKeys: String, CodingKey {
-        case id
-        case name
-        case date = "date_utc"
-        case imageURL
-        case links
-    }
-    
-    private enum LinksKeys: String, CodingKey {
-        // Only including the keys that we're interested in
-        // Ref: https://github.com/r-spacex/SpaceX-API/blob/master/docs/launches/v5/query.md
-        case patch
-        case flickr
-    }
-    
-    private enum PatchKeys: String, CodingKey {
-        case large
-    }
-    
-    private enum FlickrDictionaryKeys: String, CodingKey {
-        case large
-    }
-    
-    var id: String
-    var name: String
-    var date: Date
-    var imageURLs: [URL]
-    var patchImageURL: URL?
-    
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        
-        id = try values.decode(String.self, forKey: .id)
-        name = try values.decode(String.self, forKey: .name)
-        date = try values.decode(Date.self, forKey: .date)
-        
-        // Unpack nested structures to get the image urls
-        let links = try values.nestedContainer(keyedBy: LinksKeys.self, forKey: .links)
-        let mainImage = try links.nestedContainer(keyedBy: FlickrDictionaryKeys.self, forKey: .flickr)
-        imageURLs = (try? mainImage.decode([URL].self, forKey: .large)) ?? []
-        
-        let patchImage = try links.nestedContainer(keyedBy: PatchKeys.self, forKey: .patch)
-        patchImageURL = try? patchImage.decode(URL.self, forKey: .large)
-    }
-}
-
 struct ResponsePage<Item: Decodable>: Decodable {
     private enum CodingKeys: String, CodingKey {
         case hasNextPage
@@ -146,13 +64,14 @@ class NetworkManager {
     }
     
     // Item.type parameter here is unfortunately necessary to specialise the generic function
-    func fetchQuery<Item: Decodable>(_ query: Query, itemType: Item.Type) -> AnyPublisher<(Query, Item), APIError> {
+    func fetchQuery<Item: Decodable>(_ query: Query, sortOptions: SortOptions, itemType: Item.Type) -> AnyPublisher<(Query, Item), APIError> {
         // Create the request
         let url = query.url(withAPIRoot: apiRootURL)
         var request =  URLRequest(url: url)
         request.httpMethod = query.httpMethod
-        
-        if let requestBody = RequestBody(query: query) {
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        if let requestBody = RequestBody(query: query, sortOptions: sortOptions) {
             request.httpBody = try? JSONEncoder().encode(requestBody)
         }
         

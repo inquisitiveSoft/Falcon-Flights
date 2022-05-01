@@ -10,7 +10,11 @@
 		4A001313281B5E5A00DD0BFC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A001312281B5E5A00DD0BFC /* NetworkManager.swift */; };
 		4A001315281D70D400DD0BFC /* QueryRequestTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A001314281D70D400DD0BFC /* QueryRequestTypes.swift */; };
 		4A00131A281E8EE500DD0BFC /* AsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 4A001319281E8EE500DD0BFC /* AsyncImage */; };
-		4A00131C281E9FC700DD0BFC /* PaginatedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A00131B281E9FC700DD0BFC /* PaginatedDataSource.swift */; };
+		4A00131C281E9FC700DD0BFC /* LaunchesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A00131B281E9FC700DD0BFC /* LaunchesDataSource.swift */; };
+		4A00131E281EB61400DD0BFC /* LaunchRelatedDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A00131D281EB61400DD0BFC /* LaunchRelatedDataTypes.swift */; };
+		4A001320281F206C00DD0BFC /* ImageViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A00131F281F206C00DD0BFC /* ImageViews.swift */; };
+		4A001322281F21DE00DD0BFC /* InterfaceHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A001321281F21DE00DD0BFC /* InterfaceHelpers.swift */; };
+		4A001324281F24FE00DD0BFC /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A001323281F24FE00DD0BFC /* MockURLSession.swift */; };
 		4A06CCED281AE8E10089D5B4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A06CCEC281AE8E10089D5B4 /* RootView.swift */; };
 		4A06CCEF281AE8E40089D5B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A06CCEE281AE8E40089D5B4 /* Assets.xcassets */; };
 		4A06CCF2281AE8E40089D5B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A06CCF1281AE8E40089D5B4 /* Preview Assets.xcassets */; };
@@ -43,7 +47,11 @@
 /* Begin PBXFileReference section */
 		4A001312281B5E5A00DD0BFC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4A001314281D70D400DD0BFC /* QueryRequestTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QueryRequestTypes.swift; path = "Falcon Flights/Data Model/QueryRequestTypes.swift"; sourceTree = SOURCE_ROOT; };
-		4A00131B281E9FC700DD0BFC /* PaginatedDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginatedDataSource.swift; sourceTree = "<group>"; };
+		4A00131B281E9FC700DD0BFC /* LaunchesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesDataSource.swift; sourceTree = "<group>"; };
+		4A00131D281EB61400DD0BFC /* LaunchRelatedDataTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRelatedDataTypes.swift; sourceTree = "<group>"; };
+		4A00131F281F206C00DD0BFC /* ImageViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViews.swift; sourceTree = "<group>"; };
+		4A001321281F21DE00DD0BFC /* InterfaceHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceHelpers.swift; sourceTree = "<group>"; };
+		4A001323281F24FE00DD0BFC /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		4A06CCE7281AE8E10089D5B4 /* Falcon Flights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Falcon Flights.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A06CCEC281AE8E10089D5B4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		4A06CCEE281AE8E40089D5B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,9 +120,9 @@
 				4A06CD1F281B010E0089D5B4 /* Falcon-Flights-Info.plist */,
 				4A06CD1B281AEF390089D5B4 /* AppDelegate.swift */,
 				4A06CD1D281AEFE60089D5B4 /* SceneDelegate.swift */,
+				4A06CD1A281AEBD90089D5B4 /* UI */,
 				4A06CD19281AEBAB0089D5B4 /* Managers */,
 				4A06CD18281AEBA40089D5B4 /* Data Model */,
-				4A06CD1A281AEBD90089D5B4 /* UI */,
 				4A06CCF0281AE8E40089D5B4 /* Preview Content */,
 				4A06CCEE281AE8E40089D5B4 /* Assets.xcassets */,
 			);
@@ -133,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				4A06CCFB281AE8E40089D5B4 /* Falcon_FlightsTests.swift */,
+				4A001323281F24FE00DD0BFC /* MockURLSession.swift */,
 			);
 			path = "Falcon FlightsTests";
 			sourceTree = "<group>";
@@ -149,8 +158,9 @@
 		4A06CD18281AEBA40089D5B4 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				4A00131D281EB61400DD0BFC /* LaunchRelatedDataTypes.swift */,
 				4A001314281D70D400DD0BFC /* QueryRequestTypes.swift */,
-				4A00131B281E9FC700DD0BFC /* PaginatedDataSource.swift */,
+				4A00131B281E9FC700DD0BFC /* LaunchesDataSource.swift */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -169,6 +179,8 @@
 			children = (
 				4A06CCEC281AE8E10089D5B4 /* RootView.swift */,
 				4A06CD16281AEB280089D5B4 /* FalconListView.swift */,
+				4A00131F281F206C00DD0BFC /* ImageViews.swift */,
+				4A001321281F21DE00DD0BFC /* InterfaceHelpers.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -309,13 +321,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A001320281F206C00DD0BFC /* ImageViews.swift in Sources */,
 				4A001313281B5E5A00DD0BFC /* NetworkManager.swift in Sources */,
 				4A06CD17281AEB280089D5B4 /* FalconListView.swift in Sources */,
 				4A06CCED281AE8E10089D5B4 /* RootView.swift in Sources */,
 				4A06CD1C281AEF390089D5B4 /* AppDelegate.swift in Sources */,
-				4A00131C281E9FC700DD0BFC /* PaginatedDataSource.swift in Sources */,
+				4A00131C281E9FC700DD0BFC /* LaunchesDataSource.swift in Sources */,
 				4A06CD15281AEA730089D5B4 /* FlightManager.swift in Sources */,
+				4A001322281F21DE00DD0BFC /* InterfaceHelpers.swift in Sources */,
 				4A001315281D70D400DD0BFC /* QueryRequestTypes.swift in Sources */,
+				4A00131E281EB61400DD0BFC /* LaunchRelatedDataTypes.swift in Sources */,
 				4A06CD1E281AEFE60089D5B4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A001324281F24FE00DD0BFC /* MockURLSession.swift in Sources */,
 				4A06CCFC281AE8E40089D5B4 /* Falcon_FlightsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,14 +11,11 @@ struct RequestBody: Codable {
     fileprivate var query: QueryBody?
     fileprivate var options: OptionsBody?
     
-    init?(query: Query) {
+    init?(query: Query, sortOptions: SortOptions) {
         switch query {
         case .rocket(let rocket, pageNumber: let pageNumber):
-            self.query = QueryBody(rocket: rocket.uuidString)
-            
-            if let pageNumber = pageNumber {
-                self.options = OptionsBody(page: pageNumber)
-            }
+            self.query = QueryBody(rocket: rocket.uuidString, upcoming: false)
+            self.options = OptionsBody(page: pageNumber, sort: sortOptions)
         }
     }
     
@@ -26,16 +23,29 @@ struct RequestBody: Codable {
 
 private struct QueryBody: Codable {
     var rocket: String?
+    var upcoming: Bool?
 }
 
-// Ref: https://github.com/r-spacex/SpaceX-API/blob/master/docs/queries.md
-//    select { Object | String } - Fields to return (by default returns all fields). Documentation
-//    sort { Object | String } - Sort order. Documentation
-//    offset { Number } - Use offset or page to set skip position
-//    page { Number }
-//    limit { Number }
-//    pagination { Boolean } - If set to false, it will return all docs without adding limit condition. (Default: True)
-//    populate {Array | Object | String} - Paths which should be populated with other documents. Documentation
+/**
+# Available options:
+  select { Object | String } - Fields to return (by default returns all fields). Documentatio
+ sort { Object | String } - Sort order. Documentation
+ offset { Number } - Use offset or page to set skip position
+ page { Number }
+ limit { Number }
+ pagination { Boolean } - If set to false, it will return all docs without adding limit condition. (Default: True)
+ populate {Array | Object | String} - Paths which should be populated with other documents. Documentation
+
+ Ref: https://github.com/r-spacex/SpaceX-API/blob/master/docs/queries.md
+*/
 private struct OptionsBody: Codable {
     var page: Int?
+    var sort: [String: SortDirection]?
+}
+
+typealias SortOptions = [String: SortDirection]
+
+enum SortDirection: String, Codable {
+    case ascending
+    case descending
 }

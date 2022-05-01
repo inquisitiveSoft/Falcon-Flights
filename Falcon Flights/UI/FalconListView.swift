@@ -6,99 +6,127 @@
 //
 
 import SwiftUI
-import Combine
-import AsyncImage
-
-// Not sure how I feel about extending CGFloat in this way
-// a bit of an experiment
-extension CGFloat {
-    static var padding: CGFloat { return 8 }
-    static var cornerRadius: CGFloat { return 8 }
-}
 
 struct FalconListView: View {
     @EnvironmentObject var flightManager: FlightManager
-    @State private var isLoading: Bool = false
-    @State private var rocketResults: PaginatedListResult<RocketItem>?
-    @State private var cancellable = Set<AnyCancellable>()
+    @ObservedObject var dataSource: LaunchesDataSource
     
     var body: some View {
         VStack {
-            if let rocketResults = rocketResults {
+            if let launches = dataSource.launches {
                 ScrollView {
-                    ForEach(rocketResults.items) { (item) in
-                        RocketListViewItem(item: item)
+                    ForEach(launches.items) { (item) in
+                        LaunchListViewItem(item: item)
                     }
                     
                     // Show a loading indicator when loading the next page of data
-                    if isLoading {
-                        Text("Loading")
+                    VStack {
+                        if dataSource.isLoading {
+                            Text("Loading")
+                                .font(.system(size: 15, weight: .bold, design: .rounded))
+                                .foregroundColor(.gray)
+                        } else {
+                            Button(action: {
+                                dataSource.loadNext()
+                            }, label: {
+                                VStack(alignment: .center) {
+                                    HStack {
+                                        Text("Load Next")
+                                        Spacer().frame(width: .padding(1))
+                                        Image(systemName: "chevron.down")
+                                    }
+                                    .font(.system(size: 15, weight: .bold, design: .rounded))
+                                    .foregroundColor(.primary)
+                                    .padding(.padding(1))
+                                }
+                            })
+                        }
                     }
+                    .frame(height: .padding(4))
+                    .padding(.bottom, .padding(2))
                 }
-            } else if isLoading {
+            } else if dataSource.isLoading {
                 LoadingView()
             }
         }
         .onAppear {
-            loadNext()
+            dataSource.loadNext()
         }
-    }
-    
-    func loadNext() {
-        guard !isLoading else { return }
-            
-        withAnimation {
-            isLoading = true
-        }
-        
-        flightManager.networkManager.fetchQuery(.rocket(.falcon9, pageNumber: nil), itemType: ResponsePage<RocketItem>.self)
-            .sink(receiveCompletion: { completionResult in
-                withAnimation {
-                    isLoading = false
-                }
-            }, receiveValue: { (query, rocketPage) in
-                let nextQuery = rocketPage.nextPage.flatMap { Query.rocket(.falcon9, pageNumber: $0) }
-                var combinedItems = (rocketResults?.items ?? []) + rocketPage.items
-                combinedItems.sort { $0.date > $1.date }
-
-                withAnimation {
-                    rocketResults = PaginatedListResult<RocketItem>(query: query,
-                                                                    next: nextQuery,
-                                                                    items: combinedItems)
-                }
-            })
-            .store(in: &cancellable)
     }
 
 }
 
+struct LaunchListViewItem: View {
+    var item: RocketItem
+    
+    var body: some View {
+        VStack {
+            VStack {
+                VStack {
+                    if let imageURL = item.imageURLs.first {
+                        LoadingImage(url: imageURL) {
+                            PlaceholderImage()
+                        }
+                    } else {
+                        PlaceholderImage()
+                    }
+                }
+                // Setting minHeight and maxHeight works, where setting the height: doesn't constrain the image.
+                .frame(minHeight: 240, maxHeight: 240)
+                .clipped()
+            }
+            .clipShape(RoundedRectangle(cornerRadius: .cornerRadius))
+
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(item.name).truncationMode(.tail)
+                        .font(.system(size: 15, weight: .medium, design: .rounded))
+                    
+                    Text(localizedString(from: item.date))
+                        .font(.system(size: 15, weight: .regular, design: .rounded))
+                }
+
+                Spacer()
+                
+                VStack(alignment: .trailing) {
+                    successLabel(for: item)
+                }
+            }
+        }
+        .clipShape(RoundedRectangle(cornerRadius: .cornerRadius))
+        .clipped()
+        .padding(.horizontal, .padding(2))
+        .padding(.bottom, .padding(2))
+    }
+    
+    
+    private func localizedString(from date: Date) -> String {
+        return DateFormatter.localizedString(from: date, dateStyle: .long, timeStyle: .none)
+    }
+    
+    private func successLabel(for item: RocketItem) -> some View {
+        VStack {
+            if item.success {
+                Text("Success")
+                    .foregroundColor(.green)
+            } else {
+                Text("Failure")
+                    .foregroundColor(.red)
+            }
+        }
+        .font(.system(size: 17, weight: .bold, design: .rounded))
+    }
+}
+
+/// Shows a loading indicator
 struct LoadingView: View {
     
     var body: some View {
         if #available(iOS 14.0, *) {
             ProgressView()
         } else {
-            Text("Loading")
-        }
-    }
-    
-}
-
-struct RocketListViewItem: View {
-    var item: RocketItem
-    
-    var body: some View {
-        ZStack {
-            VStack {
-                AsyncImage(url: item.imageURLs.first) { image in
-                    image
-                } placeholder: {
-                    Image("Nebula00\(Int.random(in: 1..<4))")
-                }
-                .padding(.padding)
-            }
-            .frame(height: 200)
-            .clipShape(RoundedRectangle(cornerRadius: .cornerRadius))
+            // Sorry iOS 13.0 users
+            Text("<Imagine a loading spinner here>")
         }
     }
     
