@@ -12,8 +12,6 @@ struct RootView: View {
     
     var body: some View {
         Group {
-            Text("Falcon")
-            
 //            HeaderView()
             FalconListView()
         }
