@@ -3,11 +3,13 @@
 //  Falcon Flights
 //
 //  Created by Harry Jordan on 28/04/2022.
+//  This code is available under the MIT license: https://opensource.org/licenses/MIT
 //
 
 import UIKit
 import SwiftUI
 
+/// Only necessary to support iOS 13
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     

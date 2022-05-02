@@ -3,12 +3,11 @@
 //  Falcon Flights
 //
 //  Created by Harry Jordan on 01/05/2022.
+//  This code is available under the MIT license: https://opensource.org/licenses/MIT
 //
 
 import Foundation
 
-
-// MARK: Data Types
 enum RocketType: String {
     case falcon9 = "5e9d0d95eda69973a809d1ec"
     
@@ -24,7 +23,8 @@ enum RocketType: String {
     }
 }
 
-enum Query {
+/// Defines a query to the https://api.spacexdata.com/v5/launches endpoint
+enum LaunchesQuery {
     case rocket(RocketType, pageNumber: Int?)
     
     func url(withAPIRoot apiRoot: URL) -> URL {
@@ -43,7 +43,8 @@ enum Query {
         
 }
 
-struct RocketItem: Decodable, Identifiable {
+/// Represents a SpaceX launch
+struct LaunchItem: Decodable, Identifiable {
     private enum CodingKeys: String, CodingKey {
         case id
         case flightNumber = "flight_number"
@@ -73,7 +74,7 @@ struct RocketItem: Decodable, Identifiable {
     var flightNumber: Int
     var name: String
     var date: Date
-    var success: Bool
+    var success: Bool?
     var imageURLs: [URL]
     var patchImageURL: URL?
     
@@ -84,7 +85,7 @@ struct RocketItem: Decodable, Identifiable {
         flightNumber = try values.decode(Int.self, forKey: .flightNumber)
         name = try values.decode(String.self, forKey: .name)
         date = try values.decode(Date.self, forKey: .date)
-        success = try values.decode(Bool.self, forKey: .success)
+        success = try? values.decode(Bool.self, forKey: .success)
         
         // Unpack nested structures to get the image urls
         let links = try values.nestedContainer(keyedBy: LinksKeys.self, forKey: .links)

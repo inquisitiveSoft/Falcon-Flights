@@ -3,15 +3,17 @@
 //  Falcon Flights
 //
 //  Created by Harry Jordan on 30/04/2022.
+//  This code is available under the MIT license: https://opensource.org/licenses/MIT
 //
 
 import Foundation
 
+/// Used for building a request body
 struct RequestBody: Codable {
     fileprivate var query: QueryBody?
     fileprivate var options: OptionsBody?
     
-    init?(query: Query, sortOptions: SortOptions) {
+    init?(query: LaunchesQuery, sortOptions: SortOptions) {
         switch query {
         case .rocket(let rocket, pageNumber: let pageNumber):
             self.query = QueryBody(rocket: rocket.uuidString, upcoming: false)
@@ -21,6 +23,8 @@ struct RequestBody: Codable {
     
 }
 
+/// Query parameters
+/// Ref: https://github.com/r-spacex/SpaceX-API/blob/master/docs/queries.md
 private struct QueryBody: Codable {
     var rocket: String?
     var upcoming: Bool?

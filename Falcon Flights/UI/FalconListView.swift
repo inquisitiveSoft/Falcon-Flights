@@ -3,6 +3,7 @@
 //  Falcon Flights
 //
 //  Created by Harry Jordan on 28/04/2022.
+//  This code is available under the MIT license: https://opensource.org/licenses/MIT
 //
 
 import SwiftUI
@@ -16,30 +17,37 @@ struct FalconListView: View {
             if let launches = dataSource.launches {
                 ScrollView {
                     ForEach(launches.items) { (item) in
-                        LaunchListViewItem(item: item)
+                        LaunchItemView(item: item)
                     }
                     
                     // Show a loading indicator when loading the next page of data
                     VStack {
                         if dataSource.isLoading {
-                            Text("Loading")
+                            Text("loading")
                                 .font(.system(size: 15, weight: .bold, design: .rounded))
                                 .foregroundColor(.gray)
-                        } else {
-                            Button(action: {
+                        } else if dataSource.launches == nil || dataSource.launches?.next != nil {
+                            if dataSource.lastRequestFailed {
+                                Text("unable-to-connect")
+                                    .font(.system(size: 15, weight: .regular, design: .rounded))
+                                    .padding(.padding(1))
+                            }
+                            
+                            // Loads the next page when you scroll to the bottom
+                            Button {
                                 dataSource.loadNext()
-                            }, label: {
+                            } label: {
                                 VStack(alignment: .center) {
                                     HStack {
-                                        Text("Load Next")
+                                        Text("load-more")
                                         Spacer().frame(width: .padding(1))
                                         Image(systemName: "chevron.down")
                                     }
-                                    .font(.system(size: 15, weight: .bold, design: .rounded))
-                                    .foregroundColor(.primary)
-                                    .padding(.padding(1))
                                 }
-                            })
+                            }
+                            .font(.system(size: 15, weight: .bold, design: .rounded))
+                            .foregroundColor(.primary)
+                            .padding(.padding(1))
                         }
                     }
                     .frame(height: .padding(4))
@@ -47,6 +55,8 @@ struct FalconListView: View {
                 }
             } else if dataSource.isLoading {
                 LoadingView()
+            } else if dataSource.lastRequestFailed {
+                MainReloadPrompt(dataSource: dataSource)
             }
         }
         .onAppear {
@@ -56,67 +66,28 @@ struct FalconListView: View {
 
 }
 
-struct LaunchListViewItem: View {
-    var item: RocketItem
+struct MainReloadPrompt: View {
+    @ObservedObject var dataSource: LaunchesDataSource
     
     var body: some View {
         VStack {
-            VStack {
-                VStack {
-                    if let imageURL = item.imageURLs.first {
-                        LoadingImage(url: imageURL) {
-                            PlaceholderImage()
-                        }
-                    } else {
-                        PlaceholderImage()
-                    }
-                }
-                // Setting minHeight and maxHeight works, where setting the height: doesn't constrain the image.
-                .frame(minHeight: 240, maxHeight: 240)
-                .clipped()
+            Text("unable-to-connect")
+                .font(.system(size: 20, weight: .regular, design: .rounded))
+            
+            Spacer().frame(height: .padding(1))
+            
+            Button {
+                dataSource.loadNext()
+            } label: {
+                Text("retry")
             }
-            .clipShape(RoundedRectangle(cornerRadius: .cornerRadius))
-
-            HStack {
-                VStack(alignment: .leading) {
-                    Text(item.name).truncationMode(.tail)
-                        .font(.system(size: 15, weight: .medium, design: .rounded))
-                    
-                    Text(localizedString(from: item.date))
-                        .font(.system(size: 15, weight: .regular, design: .rounded))
-                }
-
-                Spacer()
-                
-                VStack(alignment: .trailing) {
-                    successLabel(for: item)
-                }
-            }
+            .font(.system(size: 20, weight: .bold, design: .rounded))
+            .foregroundColor(.blue)
         }
-        .clipShape(RoundedRectangle(cornerRadius: .cornerRadius))
-        .clipped()
-        .padding(.horizontal, .padding(2))
-        .padding(.bottom, .padding(2))
     }
     
-    
-    private func localizedString(from date: Date) -> String {
-        return DateFormatter.localizedString(from: date, dateStyle: .long, timeStyle: .none)
-    }
-    
-    private func successLabel(for item: RocketItem) -> some View {
-        VStack {
-            if item.success {
-                Text("Success")
-                    .foregroundColor(.green)
-            } else {
-                Text("Failure")
-                    .foregroundColor(.red)
-            }
-        }
-        .font(.system(size: 17, weight: .bold, design: .rounded))
-    }
 }
+
 
 /// Shows a loading indicator
 struct LoadingView: View {

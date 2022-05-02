@@ -3,6 +3,7 @@
 //  Falcon FlightsTests
 //
 //  Created by Harry Jordan on 28/04/2022.
+//  This code is available under the MIT license: https://opensource.org/licenses/MIT
 //
 
 import XCTest
@@ -56,7 +57,7 @@ class Falcon_FlightsTests: XCTestCase {
         """)
     }
     
-    func performFetchQueryTest(_ query: Query, expectation expectedJSON: String) throws {
+    func performFetchQueryTest(_ query: LaunchesQuery, expectation expectedJSON: String) throws {
         let expectation = self.expectation(description: "Query")
         let urlSession = MockURLSession()
         
@@ -65,7 +66,7 @@ class Falcon_FlightsTests: XCTestCase {
         
         flightManager.networkManager.fetchQuery(query,
                                                 sortOptions: ["flight_number": .ascending],
-                                                itemType: ResponsePage<RocketItem>.self)
+                                                itemType: ResponsePage<LaunchItem>.self)
             .sink { completionHandler in
                 expectation.fulfill()
             } receiveValue: { (query, _) in
@@ -88,8 +89,7 @@ class Falcon_FlightsTests: XCTestCase {
             return XCTFail("Couldn't unwrap expectation json object")
         }
         
-        // Comparing for JSON equality without worrying about field order etc.
-        // by converting to NSDictionary
+        // Comparing for JSON equality without worrying about field order etc. by converting to NSDictionary
         XCTAssertEqual(NSDictionary(dictionary: requestJSON), NSDictionary(dictionary: expectedJSON))
     }
 

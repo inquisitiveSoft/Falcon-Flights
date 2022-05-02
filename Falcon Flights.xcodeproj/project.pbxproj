@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		4A001313281B5E5A00DD0BFC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A001312281B5E5A00DD0BFC /* NetworkManager.swift */; };
-		4A001315281D70D400DD0BFC /* QueryRequestTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A001314281D70D400DD0BFC /* QueryRequestTypes.swift */; };
-		4A00131A281E8EE500DD0BFC /* AsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 4A001319281E8EE500DD0BFC /* AsyncImage */; };
 		4A00131C281E9FC700DD0BFC /* LaunchesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A00131B281E9FC700DD0BFC /* LaunchesDataSource.swift */; };
-		4A00131E281EB61400DD0BFC /* LaunchRelatedDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A00131D281EB61400DD0BFC /* LaunchRelatedDataTypes.swift */; };
+		4A00131E281EB61400DD0BFC /* LaunchDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A00131D281EB61400DD0BFC /* LaunchDataTypes.swift */; };
 		4A001320281F206C00DD0BFC /* ImageViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A00131F281F206C00DD0BFC /* ImageViews.swift */; };
 		4A001322281F21DE00DD0BFC /* InterfaceHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A001321281F21DE00DD0BFC /* InterfaceHelpers.swift */; };
 		4A001324281F24FE00DD0BFC /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A001323281F24FE00DD0BFC /* MockURLSession.swift */; };
+		4A001326281F453000DD0BFC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A001325281F453000DD0BFC /* Localizable.strings */; };
+		4A0013292820046E00DD0BFC /* GenericResponseDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0013282820046E00DD0BFC /* GenericResponseDataTypes.swift */; };
+		4A00132D28200AF200DD0BFC /* LaunchQueryRequestTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A00132C28200AF200DD0BFC /* LaunchQueryRequestTypes.swift */; };
+		4A00132F2820101500DD0BFC /* LaunchItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A00132E2820101500DD0BFC /* LaunchItemView.swift */; };
 		4A06CCED281AE8E10089D5B4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A06CCEC281AE8E10089D5B4 /* RootView.swift */; };
 		4A06CCEF281AE8E40089D5B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A06CCEE281AE8E40089D5B4 /* Assets.xcassets */; };
 		4A06CCF2281AE8E40089D5B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A06CCF1281AE8E40089D5B4 /* Preview Assets.xcassets */; };
@@ -46,12 +48,17 @@
 
 /* Begin PBXFileReference section */
 		4A001312281B5E5A00DD0BFC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		4A001314281D70D400DD0BFC /* QueryRequestTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QueryRequestTypes.swift; path = "Falcon Flights/Data Model/QueryRequestTypes.swift"; sourceTree = SOURCE_ROOT; };
 		4A00131B281E9FC700DD0BFC /* LaunchesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesDataSource.swift; sourceTree = "<group>"; };
-		4A00131D281EB61400DD0BFC /* LaunchRelatedDataTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRelatedDataTypes.swift; sourceTree = "<group>"; };
+		4A00131D281EB61400DD0BFC /* LaunchDataTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDataTypes.swift; sourceTree = "<group>"; };
 		4A00131F281F206C00DD0BFC /* ImageViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViews.swift; sourceTree = "<group>"; };
 		4A001321281F21DE00DD0BFC /* InterfaceHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceHelpers.swift; sourceTree = "<group>"; };
 		4A001323281F24FE00DD0BFC /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		4A001325281F453000DD0BFC /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		4A0013282820046E00DD0BFC /* GenericResponseDataTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponseDataTypes.swift; sourceTree = "<group>"; };
+		4A00132A282005FB00DD0BFC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		4A00132B28200A2C00DD0BFC /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		4A00132C28200AF200DD0BFC /* LaunchQueryRequestTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchQueryRequestTypes.swift; sourceTree = "<group>"; };
+		4A00132E2820101500DD0BFC /* LaunchItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchItemView.swift; sourceTree = "<group>"; };
 		4A06CCE7281AE8E10089D5B4 /* Falcon Flights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Falcon Flights.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A06CCEC281AE8E10089D5B4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		4A06CCEE281AE8E40089D5B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,7 +80,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A00131A281E8EE500DD0BFC /* AsyncImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +103,8 @@
 		4A06CCDE281AE8E10089D5B4 = {
 			isa = PBXGroup;
 			children = (
+				4A00132A282005FB00DD0BFC /* README.md */,
+				4A00132B28200A2C00DD0BFC /* LICENSE.md */,
 				4A06CCE9281AE8E10089D5B4 /* Falcon Flights */,
 				4A06CCFA281AE8E40089D5B4 /* Falcon FlightsTests */,
 				4A06CD04281AE8E40089D5B4 /* Falcon FlightsUITests */,
@@ -122,7 +130,7 @@
 				4A06CD1D281AEFE60089D5B4 /* SceneDelegate.swift */,
 				4A06CD1A281AEBD90089D5B4 /* UI */,
 				4A06CD19281AEBAB0089D5B4 /* Managers */,
-				4A06CD18281AEBA40089D5B4 /* Data Model */,
+				4A06CD18281AEBA40089D5B4 /* Data Types */,
 				4A06CCF0281AE8E40089D5B4 /* Preview Content */,
 				4A06CCEE281AE8E40089D5B4 /* Assets.xcassets */,
 			);
@@ -155,14 +163,14 @@
 			path = "Falcon FlightsUITests";
 			sourceTree = "<group>";
 		};
-		4A06CD18281AEBA40089D5B4 /* Data Model */ = {
+		4A06CD18281AEBA40089D5B4 /* Data Types */ = {
 			isa = PBXGroup;
 			children = (
-				4A00131D281EB61400DD0BFC /* LaunchRelatedDataTypes.swift */,
-				4A001314281D70D400DD0BFC /* QueryRequestTypes.swift */,
-				4A00131B281E9FC700DD0BFC /* LaunchesDataSource.swift */,
+				4A00131D281EB61400DD0BFC /* LaunchDataTypes.swift */,
+				4A00132C28200AF200DD0BFC /* LaunchQueryRequestTypes.swift */,
+				4A0013282820046E00DD0BFC /* GenericResponseDataTypes.swift */,
 			);
-			path = "Data Model";
+			path = "Data Types";
 			sourceTree = "<group>";
 		};
 		4A06CD19281AEBAB0089D5B4 /* Managers */ = {
@@ -170,6 +178,7 @@
 			children = (
 				4A06CD14281AEA730089D5B4 /* FlightManager.swift */,
 				4A001312281B5E5A00DD0BFC /* NetworkManager.swift */,
+				4A00131B281E9FC700DD0BFC /* LaunchesDataSource.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -179,8 +188,10 @@
 			children = (
 				4A06CCEC281AE8E10089D5B4 /* RootView.swift */,
 				4A06CD16281AEB280089D5B4 /* FalconListView.swift */,
+				4A00132E2820101500DD0BFC /* LaunchItemView.swift */,
 				4A00131F281F206C00DD0BFC /* ImageViews.swift */,
 				4A001321281F21DE00DD0BFC /* InterfaceHelpers.swift */,
+				4A001325281F453000DD0BFC /* Localizable.strings */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -202,7 +213,6 @@
 			);
 			name = "Falcon Flights";
 			packageProductDependencies = (
-				4A001319281E8EE500DD0BFC /* AsyncImage */,
 			);
 			productName = "Falcon Flights";
 			productReference = 4A06CCE7281AE8E10089D5B4 /* Falcon Flights.app */;
@@ -277,7 +287,6 @@
 			);
 			mainGroup = 4A06CCDE281AE8E10089D5B4;
 			packageReferences = (
-				4A001318281E8EE500DD0BFC /* XCRemoteSwiftPackageReference "AsyncImage" */,
 			);
 			productRefGroup = 4A06CCE8281AE8E10089D5B4 /* Products */;
 			projectDirPath = "";
@@ -296,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A06CCF2281AE8E40089D5B4 /* Preview Assets.xcassets in Resources */,
+				4A001326281F453000DD0BFC /* Localizable.strings in Resources */,
 				4A06CCEF281AE8E40089D5B4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,16 +331,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A0013292820046E00DD0BFC /* GenericResponseDataTypes.swift in Sources */,
 				4A001320281F206C00DD0BFC /* ImageViews.swift in Sources */,
 				4A001313281B5E5A00DD0BFC /* NetworkManager.swift in Sources */,
 				4A06CD17281AEB280089D5B4 /* FalconListView.swift in Sources */,
+				4A00132F2820101500DD0BFC /* LaunchItemView.swift in Sources */,
 				4A06CCED281AE8E10089D5B4 /* RootView.swift in Sources */,
 				4A06CD1C281AEF390089D5B4 /* AppDelegate.swift in Sources */,
 				4A00131C281E9FC700DD0BFC /* LaunchesDataSource.swift in Sources */,
+				4A00132D28200AF200DD0BFC /* LaunchQueryRequestTypes.swift in Sources */,
 				4A06CD15281AEA730089D5B4 /* FlightManager.swift in Sources */,
 				4A001322281F21DE00DD0BFC /* InterfaceHelpers.swift in Sources */,
-				4A001315281D70D400DD0BFC /* QueryRequestTypes.swift in Sources */,
-				4A00131E281EB61400DD0BFC /* LaunchRelatedDataTypes.swift in Sources */,
+				4A00131E281EB61400DD0BFC /* LaunchDataTypes.swift in Sources */,
 				4A06CD1E281AEFE60089D5B4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -661,25 +673,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		4A001318281E8EE500DD0BFC /* XCRemoteSwiftPackageReference "AsyncImage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/zzzzeu/AsyncImage";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		4A001319281E8EE500DD0BFC /* AsyncImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4A001318281E8EE500DD0BFC /* XCRemoteSwiftPackageReference "AsyncImage" */;
-			productName = AsyncImage;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4A06CCDF281AE8E10089D5B4 /* Project object */;
 }

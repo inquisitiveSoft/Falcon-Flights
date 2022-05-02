@@ -3,6 +3,7 @@
 //  Falcon FlightsTests
 //
 //  Created by Harry Jordan on 01/05/2022.
+//  This code is available under the MIT license: https://opensource.org/licenses/MIT
 //
 
 import Foundation
