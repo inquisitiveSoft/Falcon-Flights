@@ -1,6 +1,8 @@
-# The
+# Description
+This is an example app that shows launches of Space X's Falcon 9 rockets. Tested on iPhone device and simulator.
 
-This is an example app that shows launches of Space X's Falcon 9 rockets.
+# Getting Started
+`RootView.swift` probably makes sense as the starting point for diving into the code.
 
 # Aims
 I like to use example projects to test out ideas. For this project I started out with the aim of using more Combine, and specifically trying to work out how Combine could be used to read a paging api. Ideally this would be generic, so that it could be reusable.

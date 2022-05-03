@@ -20,38 +20,7 @@ struct FalconListView: View {
                         LaunchItemView(item: item)
                     }
                     
-                    // Show a loading indicator when loading the next page of data
-                    VStack {
-                        if dataSource.isLoading {
-                            Text("loading")
-                                .font(.system(size: 15, weight: .bold, design: .rounded))
-                                .foregroundColor(.gray)
-                        } else if dataSource.launches == nil || dataSource.launches?.next != nil {
-                            if dataSource.lastRequestFailed {
-                                Text("unable-to-connect")
-                                    .font(.system(size: 15, weight: .regular, design: .rounded))
-                                    .padding(.padding(1))
-                            }
-                            
-                            // Loads the next page when you scroll to the bottom
-                            Button {
-                                dataSource.loadNext()
-                            } label: {
-                                VStack(alignment: .center) {
-                                    HStack {
-                                        Text("load-more")
-                                        Spacer().frame(width: .padding(1))
-                                        Image(systemName: "chevron.down")
-                                    }
-                                }
-                            }
-                            .font(.system(size: 15, weight: .bold, design: .rounded))
-                            .foregroundColor(.primary)
-                            .padding(.padding(1))
-                        }
-                    }
-                    .frame(height: .padding(4))
-                    .padding(.bottom, .padding(2))
+                    LoadNextControl(dataSource: dataSource)
                 }
             } else if dataSource.isLoading {
                 LoadingView()
@@ -66,6 +35,7 @@ struct FalconListView: View {
 
 }
 
+/// A prompt to retry if the initial request fails
 struct MainReloadPrompt: View {
     @ObservedObject var dataSource: LaunchesDataSource
     
@@ -88,8 +58,48 @@ struct MainReloadPrompt: View {
     
 }
 
+/// The LoadMore indicator shown at the bottom of the launches list
+struct LoadNextControl: View {
+    @ObservedObject var dataSource: LaunchesDataSource
+    
+    var body: some View {
+        // Show a loading indicator when loading the next page of data
+        VStack {
+            if dataSource.isLoading {
+                Text("loading")
+                    .font(.system(size: 15, weight: .bold, design: .rounded))
+                    .foregroundColor(.gray)
+            } else if dataSource.launches == nil || dataSource.launches?.next != nil {
+                if dataSource.lastRequestFailed {
+                    Text("unable-to-connect")
+                        .font(.system(size: 15, weight: .regular, design: .rounded))
+                        .padding(.padding(1))
+                }
+                
+                // Loads the next page when you scroll to the bottom
+                Button {
+                    dataSource.loadNext()
+                } label: {
+                    VStack(alignment: .center) {
+                        HStack {
+                            Text("load-more")
+                            Spacer().frame(width: .padding(1))
+                            Image(systemName: "chevron.down")
+                        }
+                    }
+                }
+                .font(.system(size: 15, weight: .bold, design: .rounded))
+                .foregroundColor(.primary)
+                .padding(.padding(1))
+            }
+        }
+        .frame(height: .padding(4))
+        .padding(.bottom, .padding(2))
+    }
+    
+}
 
-/// Shows a loading indicator
+/// Shows a loading indicator, unless you're on iOS 13.0
 struct LoadingView: View {
     
     var body: some View {
